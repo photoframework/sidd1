@@ -1,0 +1,8 @@
+{
+  "name": "sidswap",
+  "app_id": "550a17e4",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
