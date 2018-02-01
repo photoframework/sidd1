@@ -2,23 +2,26 @@ import { Component,OnInit,ViewChild  } from '@angular/core';
 import { NavController,Slides  } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
-  selector: 'signup',
-  templateUrl: 'signup.html'
+  selector: 'login',
+  templateUrl: 'login.html'
 })
-export class SignUpPage implements OnInit {
+export class LoginPage implements OnInit {
     @ViewChild(Slides) slides: Slides;
-    signupForm: FormGroup; // Declare the signupForm 
+    loginForm: FormGroup; // Declare the loginForm 
  user:any;
     //Inject the formbuilder into the constructor
     constructor(private fb:FormBuilder) {}
      
     ngOnInit() {
-        this.signupForm  = this.fb.group({
-            fname:['',[Validators.required]],
-            lname:['',[Validators.required]],
-            dob:['',[Validators.required]],
+        this.loginForm  = this.fb.group({
+            username:['',[Validators.required]],
+            password:['',[Validators.required]],
+            
+            
+            // dob:['',[Validators.required]],
 
-            email:['',[Validators.required,Validators.email]],
+            // email:['',[Validators.required,
+            //             Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
             // password: this.fb.group({
             //     pwd: ['', [Validators.required, 
             //                Validators.minLength(8)]],
@@ -28,13 +31,8 @@ export class SignUpPage implements OnInit {
             
             // gender: ['', Validators.required],
             // mobno:['',[Validators.required]],
-            mobno:['',[Validators.required,
-                    Validators.pattern("[0-9]*"),
-                    Validators.maxLength(10),
-                    Validators.minLength(10)]],
              
-            password:['',[Validators.required,
-                        Validators.minLength(8)]]
+           
             // terms: ['', Validators.requiredTrue]
         })
     
@@ -46,19 +44,11 @@ export class SignUpPage implements OnInit {
       }
   
     public onFormSubmit() {
-        if(this.signupForm.valid) {
-            this.user = this.signupForm.value;
+        if(this.loginForm.valid) {
+            this.user = this.loginForm.value;
             console.log(this.user);
             /* Any API call logic via services goes here */
         }
-
-        
-    }
-    get mobno() {
-        return this.signupForm.get('mobno');
-    }
-    get password() {
-        return this.signupForm.get('password');
     }
 // CustId:number;
 // FName:string;

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="panel-group ">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+        <b>For Users</b>
+        <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+          <ion-item class="form-group">
+            <ion-label>UserName</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item class="form-group">
+            <ion-label>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <button ion-button type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+
+<!-- </div>
+</div>
+<ion-slides (ionSlideDidChange)="slideChanged()">
+  <ion-slide>
+    <h1>Get PhotoPrint</h1>
+  </ion-slide>
+  <ion-slide>
+    <h1>Choose Frame</h1>
+  </ion-slide>
+  <ion-slide>
+    <h1>Get It Delivered</h1>
+  </ion-slide>
+</ion-slides> -->
