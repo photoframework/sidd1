@@ -8,9 +8,14 @@ import { ListPage } from '../pages/list/list';
 import{ SignUpPage } from '../pages/signup/signup';
 import { LoginPage  } from '../pages/login/login';
 import {  WelcomePage} from "../pages/welcome/welcome";
+import { CameraPage } from "../pages/camera/camera";
+import { style } from '@angular/core/src/animation/dsl';
+import { BarcodePage } from "../pages/barcode/barcode";
+
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  styles:['app.scss']
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -28,7 +33,10 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Signup', component: SignUpPage },
       { title: 'Login', component: LoginPage },
-      { title: 'Welcome', component: WelcomePage }
+      { title: 'Welcome', component: WelcomePage },
+      { title: 'Camera', component: CameraPage },
+      { title: 'Barcode', component: BarcodePage }
+
       
     ];
 

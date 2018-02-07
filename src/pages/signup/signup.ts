@@ -14,8 +14,8 @@ export class SignUpPage implements OnInit {
      
     ngOnInit() {
         this.signupForm  = this.fb.group({
-            fname:['',[Validators.required]],
-            lname:['',[Validators.required]],
+            firstname:['',[Validators.required, Validators.pattern("[a-zA-Z][a-zA-Z ]+")]],
+            lastname:['',[Validators.required, Validators.pattern("[a-zA-Z][a-zA-Z ]+")]],
             dob:['',[Validators.required]],
 
             email:['',[Validators.required,Validators.email]],
@@ -40,10 +40,7 @@ export class SignUpPage implements OnInit {
     
          
     }
-    slideChanged() {
-        let currentIndex = this.slides.slideNext()
-        console.log('Current index is', currentIndex);
-      }
+
   
     public onFormSubmit() {
         if(this.signupForm.valid) {
@@ -59,6 +56,12 @@ export class SignUpPage implements OnInit {
     }
     get password() {
         return this.signupForm.get('password');
+    }
+    get firstname() {
+        return this.signupForm.get('firstname');
+    }
+    get lastname() {
+        return this.signupForm.get('lastname');
     }
 // CustId:number;
 // FName:string;

@@ -31,11 +31,11 @@ export class WelcomePage implements OnInit {
 
     }
 
-  
-    slideChanged() {
-      let currentIndex = this.slides.slideNext()
-      console.log('Current index is', currentIndex);
-    }
+  // //this function was setting next slide index to current slide, so so slides were moving to last slide
+  //   slideChanged() {
+  //     let currentIndex = this.slides.slideNext()
+  //     console.log('Current index is', currentIndex);
+  //   }
 
 
   

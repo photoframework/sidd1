@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="danger">
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -17,12 +17,18 @@
         <form [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">
           <ion-item class="form-group">
             <ion-label>FirstName</ion-label>
-            <ion-input type="text" formControlName="fname"></ion-input>
+            <ion-input type="text" formControlName="firstname"></ion-input>
           </ion-item>
+          <div *ngIf="firstname.errors?.pattern">
+              Please enter you first name, digits are not accepted
+         </div>
           <ion-item class="form-group">
             <ion-label>LastName</ion-label>
-            <ion-input type="text" formControlName="lname"></ion-input>
+            <ion-input type="text" formControlName="lastname"></ion-input>
           </ion-item>
+          <div *ngIf="lastname.errors?.pattern">
+              Please enter you last name, digits are not accepted
+         </div>
           <ion-item class="form-group">
             <ion-label>DOB</ion-label>
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" min="1930" formControlName="dob"></ion-datetime>
@@ -72,15 +78,4 @@
 
     </div>
   </div>
-  <!-- <ion-slides (ionSlideDidChange)="slideChanged()">
-    <ion-slide>
-      <h1>Get PhotoPrint</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Choose Frame</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Get It Delivered</h1>
-    </ion-slide>
-  </ion-slides> -->
 </ion-content>
