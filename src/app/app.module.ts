@@ -10,6 +10,7 @@ import { LoginPage } from "../pages/login/login";
 import {  WelcomePage} from "../pages/welcome/welcome";
 import { CameraPage } from "../pages/camera/camera";
 import { BarcodePage } from "../pages/barcode/barcode";
+import { PaymentOptionsPage } from "../pages/payment-options/payment-options";
 
 
 
@@ -27,7 +28,8 @@ import { NgxQRCodeModule } from "ngx-qrcode2";
     LoginPage,
     WelcomePage,
     CameraPage,
-    BarcodePage
+    BarcodePage,
+    PaymentOptionsPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { NgxQRCodeModule } from "ngx-qrcode2";
     LoginPage,
     WelcomePage,
     CameraPage,
-    BarcodePage
+    BarcodePage,
+    PaymentOptionsPage
   ],
   providers: [
     StatusBar,

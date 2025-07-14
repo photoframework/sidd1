@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>PAYMENT OPTIONS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="payment-options-content">
+  <!-- Payment Info -->
+  <div class="payment-info">
+    <p class="payment-details">{{itemCount}} item(s), To pay: ₹{{paymentAmount}}</p>
+  </div>
+
+  <!-- Wallet Section -->
+  <div class="section">
+    <h3 class="section-title">WALLET</h3>
+    
+    <!-- PhoneP -->
+    <div class="payment-option" (click)="selectPaymentOption('phonepe')">
+      <div class="payment-option-left">
+        <div class="payment-icon phonepe-icon">
+          <span class="icon-text">P</span>
+        </div>
+        <span class="payment-name">PhoneP (Wallet/UPI/Car...</span>
+      </div>
+      <button class="link-account-btn">LINK ACCOUNT</button>
+    </div>
+
+    <!-- Paytm -->
+    <div class="payment-option paytm-option">
+      <div class="payment-option-left">
+        <div class="payment-icon paytm-icon">
+          <span class="icon-text">P</span>
+        </div>
+        <div class="payment-details-container">
+          <span class="payment-name">Paytm</span>
+          <span class="payment-balance">₹538.25</span>
+        </div>
+      </div>
+      <div class="paytm-actions">
+        <span class="balance-indicator">✓</span>
+        <button class="pay-using-paytm-btn" (click)="selectPaymentOption('paytm')">PAY USING PAYTM</button>
+      </div>
+    </div>
+
+    <!-- Amazon Pay -->
+    <div class="payment-option" (click)="selectPaymentOption('amazon')">
+      <div class="payment-option-left">
+        <div class="payment-icon amazon-icon">
+          <span class="icon-text">A</span>
+        </div>
+        <span class="payment-name">Amazon Pay</span>
+      </div>
+      <button class="link-account-btn">LINK ACCOUNT</button>
+    </div>
+
+    <!-- Freecharge -->
+    <div class="payment-option" (click)="selectPaymentOption('freecharge')">
+      <div class="payment-option-left">
+        <div class="payment-icon freecharge-icon">
+          <span class="icon-text">F</span>
+        </div>
+        <span class="payment-name">Freecharge</span>
+      </div>
+      <button class="link-account-btn">LINK ACCOUNT</button>
+    </div>
+
+    <!-- Mobikwik -->
+    <div class="payment-option" (click)="selectPaymentOption('mobikwik')">
+      <div class="payment-option-left">
+        <div class="payment-icon mobikwik-icon">
+          <span class="icon-text">M</span>
+        </div>
+        <span class="payment-name">Mobikwik</span>
+      </div>
+      <button class="link-account-btn">LINK ACCOUNT</button>
+    </div>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="section">
+    <h3 class="section-title">CARDS</h3>
+    
+    <div class="payment-option add-card-option" (click)="selectPaymentOption('add-card')">
+      <div class="payment-option-left">
+        <div class="payment-icon add-card-icon">
+          <ion-icon name="add"></ion-icon>
+        </div>
+        <div class="add-card-details">
+          <span class="payment-name">ADD NEW CARD</span>
+          <p class="add-card-subtitle">Save and Pay via Cards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Food Cards Section -->
+  <div class="section">
+    <h3 class="section-title">FOOD CARDS</h3>
+    
+    <div class="payment-option" (click)="selectPaymentOption('sodexo')">
+      <div class="payment-option-left">
+        <div class="payment-icon sodexo-icon">
+          <span class="icon-text">S</span>
+        </div>
+        <span class="payment-name">Sodexo Meal Card</span>
+      </div>
+      <button class="link-account-btn">LINK ACCOUNT</button>
+    </div>
+  </div>
+</ion-content>
